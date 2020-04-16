@@ -33,6 +33,13 @@ require_once("config.php");
 */
 
 	$login = new Usuario();
-    $login->login("daniel.cerri@hotmail.com","1234");
+    $login->deleteUsuario("daniel.cerri@hotmail.com");
 	echo $login;
+	
+
+	$user = new Usuario();
+	$user->__set('email','teste1212212e@teste.com');
+	$user->__set('senha','aws');
+	$user->__set('nome','teste de inserção');
+	$user->insertNovoUser();
  ?>

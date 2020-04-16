@@ -66,7 +66,30 @@ class Usuario
 			throw new Exception("Error Processing Request");
 
 		}
+	} 
+
+
+
+	public function insertNovoUser(){
+		$sql= new Sql();
+		$results = $sql->nonQuery("insert into usuarios (email,senha,nome) values (:EMAIL,:SENHA,:NOME)", array(
+			":EMAIL"=>$this->__get('email'),
+			":SENHA"=>$this->__get('senha'),
+			":NOME"=>$this->__get('nome')
+		));
+		// var_dump($results);
+
 	}
+
+	public function deleteUsuario(){
+		$ema="daniel.cerri@hotmail.com";
+		$sql = new Sql();
+		$sql->query("delete from usuarios where email=:EMAIL",array(
+			":EMAIL"=>$ema
+		));
+	}
+
+	
 
 	public function __toString(){
 		return json_encode(array(
