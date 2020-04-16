@@ -4,7 +4,7 @@
 		private $conn;
 
 		public function __construct(){
-			$this->conn = new PDO("mysql:host=localhost;dbname=phpDAO","root","theduelx2");
+			$this->conn = new PDO("mysql:host=yourhost;dbname=yourdbname","youruser","yourpwd");
 			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 
